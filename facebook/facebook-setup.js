@@ -23,16 +23,12 @@ passport.deserializeUser(function(user, done) {
 passport.use(
     new FacebookStrategy(
         {
-            clientID: CLIENT_ID,
-            clientSecret: CLIENT_SECRET,
-            callbackURL: "http://localhost:5000/auth"
+            clientID: FB_CLIENT_ID,
+            clientSecret: FB_CLIENT_SECRET,
+            callbackURL: "/facebook/callback"
         },
         function(accessToken, refreshToken, profile, done) {
-            /*
-     use the profile info (mainly profile id) to check if the user is registerd in ur db
-     If yes select the user and pass him to the done callback
-     If not create the user and then select him and pass to callback
-    */
+            // Profile contains user-details.
             return done(null, profile);
         }
     )

@@ -9,16 +9,18 @@ router.get(
 );
 
 router.get("/fail", async (req, res) => {
-    res.send("Fail!");
+    res.send("Auth Fail.");
+});
+
+router.get("/success", async (req, res) => {
+    res.send("Auth Success.");
 });
 
 router.get(
     "/",
-    passport.authenticate("google", { failureRedirect: "/auth/google/fail" }),
-    function(req, res) {
-        // Successful authentication, user data in `req.user`.
-        console.log(req.user);
-    }
+    passport.authenticate("google", (err, prof) => {
+        // User-Data in prof.
+    })
 );
 
 module.exports = router;

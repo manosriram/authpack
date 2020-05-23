@@ -3,5 +3,5 @@ Google Authentication Module for Node.
 ```
 
 Registering **id** and **Secret**
-  - [Facebook](developers.facebook.com/)
-  - [Google](console.developers.google.com/)
+  - [Facebook](https://developers.facebook.com/)
+  - [Google](https://console.developers.google.com/)
